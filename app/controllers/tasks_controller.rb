@@ -19,7 +19,7 @@ class TasksController < ApplicationController
 			redirect_to tasks_path
 		else
 			flash[:danger] = 'task が登録されませんでした'
-			render new_task
+			render new_task_path
 		end
 	end
 	
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
 
 	# Strong Parameter
 	def task_params
-		params.require(:task).permit(:content)
+		params.require(:task).permit(:content, :status )
 	end
 
 end

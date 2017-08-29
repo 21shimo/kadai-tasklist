@@ -54,3 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # pagenation
 gem 'kaminari'
+
+group :production do
+  # heroku
+  gem 'pg'
+end

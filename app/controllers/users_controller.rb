@@ -5,9 +5,11 @@ class UsersController < ApplicationController
     @users = User.all.page(params[:page])
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+	def show
+		@user = User.find(params[:id])
+		@tasks = @user.tasks.order('created_at DESC').page(params[:page])
+		counts(@user)
+	end
 
   def new
     @user = User.new

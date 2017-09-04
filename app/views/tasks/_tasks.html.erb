@@ -4,8 +4,8 @@
       <tr>
         <th>user</th>
         <th>id</th>
-        <th>タスク</th>
         <th>ステータス</th>
+        <th>タスク</th>
       </tr>
     </thead>
     <% tasks.each do |task| %>
@@ -17,8 +17,8 @@
             <div><%= link_to user.name, user_path(user) %></div>
           </td>
           <td><%= link_to task.id, task_path(task) %></td>
-          <td><%= task.content %></td>
           <td><%= task.status %></td>
+          <td><%= task.content %></td>
         </tr>
      </tbody>
     <% end %>
